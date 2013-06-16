@@ -17,7 +17,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self.view setBackgroundColor:[UIColor yellowColor]];
+    
+    CGRect frame = CGRectMake(10, 170, 300, 50);
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    
+    label.text = @"Welcom to iOS";
+    label.textColor = [UIColor redColor];
+    
+    [self.view addSubview:label];
 }
 
 - (void)didReceiveMemoryWarning
