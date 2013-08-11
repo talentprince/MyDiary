@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AboutViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *hello;
 @property (weak, nonatomic) IBOutlet UILabel *slogan;
-@property (weak, nonatomic) IBOutlet UIImageView *headImage;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *authorCompany;
+@property (weak, nonatomic) IBOutlet UIImageView *infoImage;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *aboutSegment;
 
 - (IBAction)segmentChanged:(id)sender;
 

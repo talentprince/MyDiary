@@ -23,7 +23,13 @@
 		3349B070176D75EF00DE93B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3349B06F176D75EF00DE93B1 /* Default-568h@2x.png */; };
 		3349B073176D75EF00DE93B1 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3349B071176D75EF00DE93B1 /* MainStoryboard_iPhone.storyboard */; };
 		3349B076176D75EF00DE93B1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3349B074176D75EF00DE93B1 /* MainStoryboard_iPad.storyboard */; };
-		3349B079176D75EF00DE93B1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349B078176D75EF00DE93B1 /* ViewController.m */; };
+		3349B079176D75EF00DE93B1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349B078176D75EF00DE93B1 /* AboutViewController.m */; };
+		3371208D17B7815F002049EE /* company.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208917B7815F002049EE /* company.png */; };
+		3371208E17B7815F002049EE /* company@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208A17B7815F002049EE /* company@2x.png */; };
+		3371208F17B7815F002049EE /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208B17B7815F002049EE /* logo.png */; };
+		3371209017B7815F002049EE /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208C17B7815F002049EE /* logo@2x.png */; };
+		3371209217B793FD002049EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3371209117B793FD002049EE /* CoreLocation.framework */; };
+		3371209517B79676002049EE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3371209417B79676002049EE /* LocationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +53,15 @@
 		3349B06F176D75EF00DE93B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3349B072176D75EF00DE93B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3349B075176D75EF00DE93B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		3349B077176D75EF00DE93B1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3349B078176D75EF00DE93B1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; usesTabs = 0; };
+		3349B077176D75EF00DE93B1 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		3349B078176D75EF00DE93B1 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; usesTabs = 0; };
+		3371208917B7815F002049EE /* company.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company.png; sourceTree = "<group>"; };
+		3371208A17B7815F002049EE /* company@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "company@2x.png"; sourceTree = "<group>"; };
+		3371208B17B7815F002049EE /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		3371208C17B7815F002049EE /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		3371209117B793FD002049EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3371209317B79676002049EE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		3371209417B79676002049EE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3371209217B793FD002049EE /* CoreLocation.framework in Frameworks */,
 				3349B05A176D75EF00DE93B1 /* UIKit.framework in Frameworks */,
 				3349B05C176D75EF00DE93B1 /* Foundation.framework in Frameworks */,
 				3349B05E176D75EF00DE93B1 /* CoreGraphics.framework in Frameworks */,
@@ -68,11 +82,8 @@
 		3349B04D176D75EF00DE93B1 = {
 			isa = PBXGroup;
 			children = (
-				332578BC176DA1A50034B2BF /* icon@2x.png */,
-				332578BA176DA1980034B2BF /* icon.png */,
-				332578B8176DA0720034B2BF /* Default.png */,
-				332578B6176DA06B0034B2BF /* Default@2x.png */,
-				332578B4176DA0640034B2BF /* Default-568h@2x.png */,
+				3371209117B793FD002049EE /* CoreLocation.framework */,
+				3371208817B77F06002049EE /* Resources */,
 				3349B05F176D75EF00DE93B1 /* MyDiary */,
 				3349B058176D75EF00DE93B1 /* Frameworks */,
 				3349B057176D75EF00DE93B1 /* Products */,
@@ -104,8 +115,10 @@
 				3349B069176D75EF00DE93B1 /* AppDelegate.m */,
 				3349B071176D75EF00DE93B1 /* MainStoryboard_iPhone.storyboard */,
 				3349B074176D75EF00DE93B1 /* MainStoryboard_iPad.storyboard */,
-				3349B077176D75EF00DE93B1 /* ViewController.h */,
-				3349B078176D75EF00DE93B1 /* ViewController.m */,
+				3349B077176D75EF00DE93B1 /* AboutViewController.h */,
+				3349B078176D75EF00DE93B1 /* AboutViewController.m */,
+				3371209317B79676002049EE /* LocationViewController.h */,
+				3371209417B79676002049EE /* LocationViewController.m */,
 				3349B060176D75EF00DE93B1 /* Supporting Files */,
 			);
 			path = MyDiary;
@@ -123,6 +136,22 @@
 				3349B06F176D75EF00DE93B1 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3371208817B77F06002049EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3371208917B7815F002049EE /* company.png */,
+				3371208A17B7815F002049EE /* company@2x.png */,
+				3371208B17B7815F002049EE /* logo.png */,
+				3371208C17B7815F002049EE /* logo@2x.png */,
+				332578BC176DA1A50034B2BF /* icon@2x.png */,
+				332578BA176DA1980034B2BF /* icon.png */,
+				332578B8176DA0720034B2BF /* Default.png */,
+				332578B6176DA06B0034B2BF /* Default@2x.png */,
+				332578B4176DA0640034B2BF /* Default-568h@2x.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +216,10 @@
 				332578B9176DA0720034B2BF /* Default.png in Resources */,
 				332578BB176DA1980034B2BF /* icon.png in Resources */,
 				332578BD176DA1A50034B2BF /* icon@2x.png in Resources */,
+				3371208D17B7815F002049EE /* company.png in Resources */,
+				3371208E17B7815F002049EE /* company@2x.png in Resources */,
+				3371208F17B7815F002049EE /* logo.png in Resources */,
+				3371209017B7815F002049EE /* logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +232,8 @@
 			files = (
 				3349B066176D75EF00DE93B1 /* main.m in Sources */,
 				3349B06A176D75EF00DE93B1 /* AppDelegate.m in Sources */,
-				3349B079176D75EF00DE93B1 /* ViewController.m in Sources */,
+				3349B079176D75EF00DE93B1 /* AboutViewController.m in Sources */,
+				3371209517B79676002049EE /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
