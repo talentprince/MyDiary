@@ -31,11 +31,19 @@
         switch ([CLLocationManager authorizationStatus]) {
             case kCLAuthorizationStatusAuthorized:
             case kCLAuthorizationStatusNotDetermined:
-                self.loctionManager = [[CLLocationManager alloc] init];
-                self.loctionManager.delegate = self;
-                [self.loctionManager setDistanceFilter:kCLDistanceFilterNone];
-                [self.loctionManager setDesiredAccuracy:kCLLocationAccuracyBest];
-                [self.loctionManager startUpdatingLocation];
+                self.mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 578)];
+                self.mapView.mapType = MAMapTypeStandard;
+                self.mapView.delegate = self;
+                
+                if(self.mapView) {
+                    CLLocationCoordinate2D center = {39.91669,116.39716};
+                    MACoordinateSpan span = {0.04,0.03};
+                    MACoordinateRegion region = {center,span};
+                    [self.mapView setRegion:region animated:NO];
+                    [self.view addSubview:self.mapView];
+                }
+//                [self.mapView setShowsUserLocation:YES];
+//                [self.view addSubview:self.mapView];
                 break;
             case kCLAuthorizationStatusDenied:
                 NSLog(@"定位服务禁止了");
