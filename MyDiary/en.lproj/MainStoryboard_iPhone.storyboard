@@ -19,33 +19,168 @@
             </objects>
             <point key="canvasLocation" x="-5406" y="-64"/>
         </scene>
-        <!--View Controller - 我的日记-->
+        <!--Navigation Controller - 我的日记-->
+        <scene sceneID="iPo-uy-WkH">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="CNi-3N-ruh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的日记" id="NHo-Sv-5X1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aw9-9Y-Xe6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="NCV-xu-U4P" kind="relationship" relationship="rootViewController" id="r56-RI-Ck6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJd-gh-fWS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5904" y="-672"/>
+        </scene>
+        <!--Diary List View Controller-->
         <scene sceneID="r3V-gd-cui">
             <objects>
-                <viewController id="NCV-xu-U4P" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="swF-AZ-meg">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="我的日记" id="1lf-jA-ukg"/>
+                <viewController id="NCV-xu-U4P" customClass="DiaryListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="05w-jN-Pb0">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DiaryCell" id="PLu-r3-iHb">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="sB2-92-GfL" kind="push" identifier="DetailDiary" id="nxp-Ul-gte"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eCy-Dw-m0s">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3w9-cw-GY0">
+                            <connections>
+                                <segue destination="InY-1o-reu" kind="modal" identifier="AddDiary" id="z8G-ys-7jl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdL-PD-j4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5904" y="-347"/>
+            <point key="canvasLocation" x="-5381" y="-688"/>
+        </scene>
+        <!--Create Diary View Controller-->
+        <scene sceneID="Has-Iy-dwL">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="InY-1o-reu" customClass="CreateDiaryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcg-KW-1L8">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ii7-i2-OxR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="返回" id="9FM-c7-rlT">
+                                        <connections>
+                                            <action selector="cancel:" destination="InY-1o-reu" id="Bdv-lr-wjG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ne4-b6-960"/>
+                                    <barButtonItem systemItem="camera" id="GB8-kA-XoP"/>
+                                    <barButtonItem title="录音" id="ATn-GP-mUh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hru-Qy-Ftb"/>
+                                    <barButtonItem title="保存" id="bHm-a3-aaW">
+                                        <connections>
+                                            <action selector="saveDIary:" destination="InY-1o-reu" id="S58-kb-23f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="时间和日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ESb-9h-LIp">
+                                <rect key="frame" x="20" y="58" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="日记标题" textAlignment="center" minimumFontSize="17" id="tNz-0v-T42">
+                                <rect key="frame" x="20" y="93" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Wrq-I3-Lak">
+                                <rect key="frame" x="20" y="131" width="280" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8292362134630421" green="1" blue="0.71772211251754903" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4AN-uh-yBC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="diaryContent" destination="Wrq-I3-Lak" id="I6f-Gr-UPu"/>
+                        <outlet property="diaryDate" destination="ESb-9h-LIp" id="q2O-Im-tCy"/>
+                        <outlet property="diaryTItle" destination="tNz-0v-T42" id="654-26-zyB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rF-A4-u0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4835" y="-1326"/>
+        </scene>
+        <!--Detail Diary View Controller-->
+        <scene sceneID="vFK-vD-n98">
+            <objects>
+                <viewController id="sB2-92-GfL" customClass="DetailDiaryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d5z-rQ-31E">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oUY-02-6UE">
+                                <rect key="frame" x="0.0" y="48" width="320" height="319"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h1G-gK-72b">
+                                <rect key="frame" x="111" y="8" width="99" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MBx-Kp-K95"/>
+                    <connections>
+                        <outlet property="diaryContent" destination="oUY-02-6UE" id="pMv-wn-bP7"/>
+                        <outlet property="diaryTitle" destination="h1G-gK-72b" id="pwL-iB-tOM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STD-lJ-Idn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4847" y="-672"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TEd-ec-Ymg">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="fSW-Av-FQ4" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rfU-Tb-WB8">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="NCV-xu-U4P" kind="relationship" relationship="viewControllers" id="wYf-j0-uYd"/>
+                        <segue destination="CNi-3N-ruh" kind="relationship" relationship="viewControllers" id="N66-He-D7j"/>
                         <segue destination="26o-83-q7H" kind="relationship" relationship="viewControllers" id="cVT-WE-R0V"/>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="IRe-iE-Kzm"/>
                     </connections>
@@ -77,7 +212,7 @@
                                     <segment title="TPR"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentChanged:" destination="2" eventType="valueChanged" id="pgs-Z4-o8F"/>
+                                    <action selector="segmentChanged:" destination="2" eventType="valueChanged" id="p43-ao-36h"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HEHE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vfv-Q7-kNs">
@@ -104,7 +239,7 @@
                     <tabBarItem key="tabBarItem" title="关于作者" id="cOv-Bo-YZr"/>
                     <connections>
                         <outlet property="aboutSegment" destination="u1L-PY-kNd" id="pQu-bu-bIJ"/>
-                        <outlet property="hello" destination="vfv-Q7-kNs" id="bB6-5R-pCu"/>
+                        <outlet property="hello" destination="vfv-Q7-kNs" id="cfB-TE-X7i"/>
                         <outlet property="infoImage" destination="EiQ-UM-gwb" id="1hw-Nx-xUp"/>
                         <outlet property="slogan" destination="ZfX-bC-ODj" id="G81-42-8a7"/>
                     </connections>
@@ -124,6 +259,26 @@
                 <relationship kind="outlet" name="infoImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="slogan" candidateClass="UILabel"/>
             </relationships>
+        </class>
+        <class className="CreateDiaryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateDiaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="saveDIary:"/>
+                <relationship kind="outlet" name="diaryContent" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="diaryDate" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="diaryTItle" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DetailDiaryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailDiaryViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="diaryContent" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="diaryTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="DiaryListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DiaryListViewController.h"/>
         </class>
         <class className="LocationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationViewController.h"/>
