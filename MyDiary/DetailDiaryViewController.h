@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *diaryTitle;
 @property (weak, nonatomic) IBOutlet UITextView *diaryContent;
 @property (strong, nonatomic) Diary *diary;
+@property (weak, nonatomic) IBOutlet UIImageView *diaryPhoto;
 
 @end

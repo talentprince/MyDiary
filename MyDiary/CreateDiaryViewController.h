@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Diary.h"
+#import "CameraViewController.h"
+
 @class CreateDiaryViewController;
 
 @protocol CreateDiaryViewControllerDelegate
@@ -17,12 +19,15 @@
                  didSaveWithDiary:(Diary *)theDiary;
 @end
 
-@interface CreateDiaryViewController : UIViewController
+@interface CreateDiaryViewController : UIViewController <UITextFieldDelegate, CameraViewControllerDelegate>
+
 @property (weak, nonatomic) id <CreateDiaryViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *diaryDate;
-@property (weak, nonatomic) IBOutlet UITextField *diaryTItle;
+@property (weak, nonatomic) IBOutlet UITextField *diaryTitle;
 @property (weak, nonatomic) IBOutlet UITextView *diaryContent;
+@property (strong, nonatomic) Diary *diary;
+
 - (IBAction)cancel:(id)sender;
-- (IBAction)saveDIary:(id)sender;
+- (IBAction)saveDiary:(id)sender;
 
 @end

@@ -46,7 +46,10 @@
 
 - (void) createDiaryViewController:(CreateDiaryViewController *)createDiaryController didSaveWithDiary:(Diary *)theDiary
 {
+    Diary *diary = theDiary;
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.diaries addObject:diary];
+    [self.tableView reloadData];
 }
 
 - (void) createDiaryViewControllerDidCancel:(CreateDiaryViewController *)createDiaryController

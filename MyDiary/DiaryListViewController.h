@@ -11,6 +11,6 @@
 
 @interface DiaryListViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, CreateDiaryViewControllerDelegate>
 
-@property (nonatomic, strong) NSArray *diaries;
+@property (nonatomic, strong) NSMutableArray *diaries;
 
 @end

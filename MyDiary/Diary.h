@@ -17,4 +17,5 @@
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, readonly, getter = dateCreate) NSDate *dateCreate;
+@property (nonatomic, strong) NSString *photoKey;
 @end
