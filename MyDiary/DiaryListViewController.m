@@ -9,6 +9,7 @@
 #import "DiaryListViewController.h"
 #import "DetailDiaryViewController.h"
 #import "Diary.h"
+#import "DiaryStore.h"
 
 @interface DiaryListViewController ()
 
@@ -61,14 +62,6 @@
 {
     [super viewDidLoad];
     
-    Diary *a = [[Diary alloc]initWithTitle:@"One" content:@"One hehe"];
-    Diary *b = [[Diary alloc]initWithTitle:@"Two" content:@"Two hehe"];
-    Diary *c = [[Diary alloc]initWithTitle:@"Three" content:@"Three hehe"];
-    Diary *d = [[Diary alloc]initWithTitle:@"Four" content:@"Four hehe"];
-    Diary *e = [[Diary alloc]initWithTitle:@"Five" content:@"Five hehe"];
-    
-    self.diaries = [NSMutableArray arrayWithObjects:a, b, c, d, e, nil];
-    
     [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     
     [[self navigationItem] setTitle:@"日记列表"];
@@ -78,6 +71,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.diaries = (NSMutableArray *)[[DiaryStore defaultStore] diaries];
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - Table view data source

@@ -27,6 +27,7 @@
 		3349B073176D75EF00DE93B1 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3349B071176D75EF00DE93B1 /* MainStoryboard_iPhone.storyboard */; };
 		3349B076176D75EF00DE93B1 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3349B074176D75EF00DE93B1 /* MainStoryboard_iPad.storyboard */; };
 		3349B079176D75EF00DE93B1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3349B078176D75EF00DE93B1 /* AboutViewController.m */; };
+		33506A321838DD9400A00389 /* DiaryStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 33506A311838DD9400A00389 /* DiaryStore.m */; };
 		336366A217DB6EFA00A74A8C /* Diary.m in Sources */ = {isa = PBXBuildFile; fileRef = 336366A117DB6EFA00A74A8C /* Diary.m */; };
 		3371208D17B7815F002049EE /* company.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208917B7815F002049EE /* company.png */; };
 		3371208E17B7815F002049EE /* company@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3371208A17B7815F002049EE /* company@2x.png */; };
@@ -76,6 +77,8 @@
 		3349B075176D75EF00DE93B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		3349B077176D75EF00DE93B1 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		3349B078176D75EF00DE93B1 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; usesTabs = 0; };
+		33506A301838DD9400A00389 /* DiaryStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryStore.h; sourceTree = "<group>"; };
+		33506A311838DD9400A00389 /* DiaryStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryStore.m; sourceTree = "<group>"; };
 		336366A017DB6EFA00A74A8C /* Diary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diary.h; sourceTree = "<group>"; };
 		336366A117DB6EFA00A74A8C /* Diary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diary.m; sourceTree = "<group>"; };
 		3371208917B7815F002049EE /* company.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company.png; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 		3349B05F176D75EF00DE93B1 /* MyDiary */ = {
 			isa = PBXGroup;
 			children = (
+				33506A301838DD9400A00389 /* DiaryStore.h */,
+				33506A311838DD9400A00389 /* DiaryStore.m */,
 				337677A317E5B0A500A3EF34 /* ImageStore.h */,
 				337677A417E5B0A500A3EF34 /* ImageStore.m */,
 				3397E03C17E476EA0088EC63 /* CameraViewController.h */,
@@ -410,6 +415,7 @@
 			files = (
 				3349B066176D75EF00DE93B1 /* main.m in Sources */,
 				3349B06A176D75EF00DE93B1 /* AppDelegate.m in Sources */,
+				33506A321838DD9400A00389 /* DiaryStore.m in Sources */,
 				3349B079176D75EF00DE93B1 /* AboutViewController.m in Sources */,
 				3371209517B79676002049EE /* LocationViewController.mm in Sources */,
 				336366A217DB6EFA00A74A8C /* Diary.m in Sources */,
@@ -516,6 +522,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyDiary/MyDiary-Prefix.pch";
 				INFOPLIST_FILE = "MyDiary/MyDiary-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/Release-iphonesimulator\"",
@@ -527,6 +534,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,6 +546,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyDiary/MyDiary-Prefix.pch";
 				INFOPLIST_FILE = "MyDiary/MyDiary-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib/Release-iphonesimulator\"",
@@ -549,6 +558,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
